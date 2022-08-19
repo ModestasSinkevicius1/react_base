@@ -8,7 +8,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,6 +16,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: linear-gradient(red, yellow);
 }
 
 .App-link {
@@ -32,96 +32,25 @@
   }
 }
 
-.black, .white{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: '100px';
-  height: '100px';
-  border-radius: 100%;
-  width: 100px;
-  height: 100px;
-  z-index: 1;
-}
-
-.black{
-  border: 2px solid black;
-  background-color: black; 
-}
-
-.white{
-  border: 2px solid white;
-  background-color: white;
-  color: black;
-}
-
-.romb-container{
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.romb-container>.romb {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 200px;
-  transform: rotate(45deg);
-  position:absolute;
-  transition: all 1s;
-  margin-top: 50px;
-  user-select: none;
-}
-
-.romb>h1{
-  transform: rotate(-45deg);
-}
-
-.romb-container:hover > .romb-0{
-  transform: translateY(10px) rotate(45deg);
-}
-
-.romb-container:hover > .romb-1{
-  transform: translateY(200px) rotate(45deg);
-}
-
-.romb-container:hover > .romb-2{
-  transform: translateY(400px) rotate(45deg);
-}
-
-.dog-rect, .dog-circl{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 200px;
-  background-color: black;
-  color: white;
-  gap: 20px;
-  flex-direction: column;
-}
-
-.dog-rect h1, .dog-rect h2{
-  margin: 0;
-}
-.line{
+.tvenkinys{
   display: flex;
   flex-direction: row;
-}
-.dog-rect h2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: black;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  gap: 20px;
+  
 }
 
-.dog-circl{
-  border-radius: 50%;
+.daiktas{
+  border: 2px solid white;
+}
+
+.daiktas h1{
   background-color: white;
   color: black;
+  margin: 5px 0;
+  text-align: justify;
+}
+
+.daiktas h1:first-child,
+.daiktas h1:last-child{
+  margin: 0;
 }

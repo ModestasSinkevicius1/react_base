@@ -1,56 +1,34 @@
 import './App.css';
-import rand from './Utilities/random.js'
+import Jura from './Components/R3/Jura.jsx';
+//import Bala from './Components/R3/Bala.jsx';
+//import Tvenkinys from './Components/R3/Tvenkinys';
+//import rand from './Utilities/random.js'
 
-
-
-
-const dogs = ['šuo', 'šunius', 'Bobikas', 'kudlius', 'Šarikas', 'avigalvis'];
+const seaPlaners = [
+  {id: 1, type: 'man', name: 'Lina', color: 'blue'},
+  {id: 2, type: 'car', name: 'Opel', color: 'red'},
+  {id: 3, type: 'animal', name: 'Vilkas', color: 'green'},
+  {id: 4, type: 'fish', name: 'Ungurys', color: 'yellow'},
+  {id: 5, type: 'man', name: 'Tomas', color: 'green'},
+  {id: 6, type: 'animal', name: 'Bebras', color: 'red'},
+  {id: 7, type: 'animal', name: 'Barsukas', color: 'green'},
+  {id: 8, type: 'car', name: 'MB', color: 'blue'},
+  {id: 9, type: 'car', name: 'ZIL', color: 'red'},
+  {id: 10, type: 'man', name: 'Teta Toma', color: 'yellow'},
+];
 
 //Task Main
 function App() {
-  return (   
+  return (
     <div className="App">
-      <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
-        <div className='line'>
-          {
-            dogs.sort((a, b)=>b.length - a.length).map((dog, i)=>
-              <div key={i} className='dog-rect'>
-                <h1>{dog}</h1>
-                <h2>{i+1}</h2>
-              </div>
-          )     
-          }
-        </div>
-        <div className='line'>
-          {
-            dogs.map((dog, i)=>
-              <div key={i} className='dog-circl'>
-                <h1>{dog}</h1>
-              </div>
-          )
-          }
-        </div>
-        <div className='line'>
-          {
-            dogs.filter(a=>a[0].toUpperCase() !== a[0]).map((dog, i)=>
-              <div key={i} className='dog-circl'>
-                <h1>{dog}</h1>
-              </div>
-          )
-          }
-        </div>
-        <div className='line'>
-          {
-            dogs.map((dog, i)=>
-              <div key={i} className='dog-circl' style={rand(0, 10) > 6 ? {backgroundColor: 'green'} : {backgroundColor: 'red'}}>
-                <h1>{i}</h1>
-              </div>
-          )
-          }
-        </div>  
-      </header>
+      <header className="App-header">        
+        <Jura array={seaPlaners.type} />
+      </header>    
     </div>
   );
 }
+
+//<Bala array = { seaPlaners } />
+//<Tvenkinys array = { seaPlaners } />
 
 export default App;
