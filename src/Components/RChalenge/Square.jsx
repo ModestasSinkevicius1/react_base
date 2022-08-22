@@ -1,7 +1,7 @@
-import randColor from "../../Utilities/random_color.js";
+//import randColor from "../../Utilities/random_color.js";
 
 function Square(props){
-    const color = randColor();
+    //const color = randColor();
 
     if(!props.show){
         return null;

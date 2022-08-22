@@ -55,27 +55,26 @@
   margin: 0;
 }
 
-.vandenynas{
+.square{
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  width: 200px;
+  height: 200px;
+  font-size: 32px;
+  align-items: center;
+  justify-content: center;
+  animation-name: App-logo-spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
-.tipas h1:first-child, 
-.vardas h1:first-child, 
-.spalva h1:first-child{
-  color:black;
-}
-
-.pasaulis{
+.star{
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.pasaulis-item h1{
-  background-color: white;
-  color: black;
-  margin: 5px 0;
-  text-align: justify;
+  align-items: center;
+  justify-content: center;
+  animation-name: App-logo-spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  background-color: black;
 }
