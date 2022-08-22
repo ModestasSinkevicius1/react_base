@@ -1,28 +1,24 @@
 import './App.css';
-import Jura from './Components/R3/Jura.jsx';
-//import Bala from './Components/R3/Bala.jsx';
-//import Tvenkinys from './Components/R3/Tvenkinys';
-//import rand from './Utilities/random.js'
+import Bin from './Components/RChalenge/Bin.jsx';
+//import Square from './Components/RChalenge/Square.jsx';
 
-const seaPlaners = [
-  {id: 1, type: 'man', name: 'Lina', color: 'blue'},
-  {id: 2, type: 'car', name: 'Opel', color: 'red'},
-  {id: 3, type: 'animal', name: 'Vilkas', color: 'green'},
-  {id: 4, type: 'fish', name: 'Ungurys', color: 'yellow'},
-  {id: 5, type: 'man', name: 'Tomas', color: 'green'},
-  {id: 6, type: 'animal', name: 'Bebras', color: 'red'},
-  {id: 7, type: 'animal', name: 'Barsukas', color: 'green'},
-  {id: 8, type: 'car', name: 'MB', color: 'blue'},
-  {id: 9, type: 'car', name: 'ZIL', color: 'red'},
-  {id: 10, type: 'man', name: 'Teta Toma', color: 'yellow'},
+/*
+const squares = [
+  {color: 'black', name:'Valio', size: 88, show: true},
+  {color: 'white', name:'Hello', size: 144, show: true},
+  {color: 'crimson', name:'Geras', size: 201, show: true},
+  {color: 'skyblue', name:'Neblogas', size: 333, show: true},
 ];
+*/
 
 //Task Main
 function App() {
   return (
     <div className="App">
       <header className="App-header">        
-        <Jura array={seaPlaners.type} />
+        <Bin color='crimson' size='164px' />
+        <Bin color='crimson' size='124px' />
+        <Bin color='crimson' size='64px' />
       </header>    
     </div>
   );
@@ -30,5 +26,7 @@ function App() {
 
 //<Bala array = { seaPlaners } />
 //<Tvenkinys array = { seaPlaners } />
+//<Jura array={seaPlaners.type} />
+//{[...squares].sort((a, b) => b.size - a.size).filter(c => c.size < 200).map((x, i) => <Square key={i} color={x.color} name={x.name} size={x.size} show={x.show} />)}
 
 export default App;

@@ -54,3 +54,27 @@
 .daiktas h1:last-child{
   margin: 0;
 }
+
+.square{
+  display: flex;
+  width: 200px;
+  height: 200px;
+  font-size: 32px;
+  align-items: center;
+  justify-content: center;
+  animation-name: App-logo-spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.star{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: App-logo-spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  background-color: black;
+}
