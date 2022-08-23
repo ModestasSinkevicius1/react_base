@@ -6,14 +6,7 @@ const colorRed = {
 const colorBlue = {
   color: 'blue',
 };
-/*
-function Animal(props) {
-  return (
-  <div className="Animal">
-    <h1 style={props.value === 1 ? colorBlue : colorRed}>Zebrai ir Bebrai {props.value ? 'blue' : 'red'}</h1>
-  </div>);
-}
-*/
+
 function Animal(props) {
   return (
   <div className="Animal">

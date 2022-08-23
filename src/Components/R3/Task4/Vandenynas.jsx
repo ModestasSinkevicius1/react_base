@@ -6,7 +6,7 @@ function getItem(array, filterName){
     const newArray = [];
 
     for(const item of array){
-        newArray.push(item[filterName]);
+        newArray.push({[filterName]: item[filterName], color: item['color']});
     }
     return newArray;
 }

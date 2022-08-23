@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-image: linear-gradient(red, yellow);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bala{
+  background-color: rgb(126 113 154);
+}
+
+.tvenkinys{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.daiktas h1{
+  background-color: white;
+  color: black;
+  margin: 5px 0;
+  text-align: justify;
+}
+
+.daiktas h1:first-child,
+.daiktas h1:last-child{
+  margin: 0;
+}
+
+.jura{
+  background-color: cornflowerblue;
+}
+
+.vandenynas{
+  display: flex;
+  background-color: rgb(89, 89, 240);
+}
+
+.tipas h1:first-child, 
+.vardas h1:first-child, 
+.spalva h1:first-child{
+  color:black;
+}
+
+.pasaulis{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: greenyellow;
+}
+
+.pasaulis-item h1{
+  background-color: white;
+  color: black;
+  margin: 5px 0;
+  text-align: justify;
+}
+
+.bala, .tvenkinys, .jura, .vandenynas, .pasaulis{
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.vandenynas{
+  justify-content: space-evenly;
+}

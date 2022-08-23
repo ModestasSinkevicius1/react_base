@@ -8,6 +8,7 @@
 }
 
 .App-header {
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,7 +17,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-image: linear-gradient(red, yellow);
 }
 
 .App-link {
@@ -32,50 +32,40 @@
   }
 }
 
-.tvenkinys{
+.dog-rect, .dog-circl{
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  color: white;
   gap: 20px;
-  
+  flex-direction: column;
 }
 
-.daiktas{
-  border: 2px solid white;
-}
-
-.daiktas h1{
-  background-color: white;
-  color: black;
-  margin: 5px 0;
-  text-align: justify;
-}
-
-.daiktas h1:first-child,
-.daiktas h1:last-child{
+.dog-rect h1, .dog-rect h2{
   margin: 0;
 }
 
-.vandenynas{
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.tipas h1:first-child, 
-.vardas h1:first-child, 
-.spalva h1:first-child{
-  color:black;
-}
-
-.pasaulis{
+.line{
   display: flex;
   flex-direction: row;
-  gap: 20px;
 }
 
-.pasaulis-item h1{
+.dog-rect h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   color: black;
-  margin: 5px 0;
-  text-align: justify;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.dog-circl{
+  border-radius: 50%;
+  background-color: white;
+  color: black;
 }
