@@ -17,7 +17,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   /*background-image: linear-gradient(red, yellow);*/
-  transition: opacity 2s;
+  transition: opacity 15s;
 }
 
 .Hidden-header{
@@ -40,9 +40,40 @@
   }
 }
 
+@keyframes block-swipes {
+  0% {
+    transform: translate(-100px, 200%);
+  }
+  50%{
+    transform: translate(100px, 200%);
+  }
+  100%{
+    transform: translate(-100px, 200%);
+  }
+}
+
+.status-container{
+  position: relative;
+}
+
 .rect{
-  border: 2px solid white;
-  width: 200px;
-  height: 200px;
-  transition: background-color 2s;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  top: 50%;
+  transform: translate(-100px, 200%);
+  background-color: white;
+  animation-name: block-swipes;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+}
+
+.App h1{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-100%);
+  transition: color 5s;
 }

@@ -11,7 +11,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
   align-items: center;
   justify-content: center;
@@ -32,40 +32,43 @@
   }
 }
 
-.dog-rect, .dog-circl{
+.change{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 200px;
   height: 200px;
+
   background-color: black;
+}
+
+span{
+  font-size: 18px;
+}
+
+.btn-change,
+.btn-random{
+  padding: 10px 20px;
+  background-color: transparent;
   color: white;
-  gap: 20px;
-  flex-direction: column;
+  font-weight: bolder;
+  border-radius: 15px;
+  font-size: 18px;
 }
 
-.dog-rect h1, .dog-rect h2{
-  margin: 0;
-}
-
-.line{
+.block-container{
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.dog-rect h2{
+.block{
+  background-color:deepskyblue;
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+}
+
+.btn-block-add-container{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: black;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.dog-circl{
-  border-radius: 50%;
-  background-color: white;
-  color: black;
 }

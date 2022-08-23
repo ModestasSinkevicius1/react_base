@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import './App.css';
-import randColor from './Utilities/random_color.js'
-import rand from './Utilities/random.js'
+import '../Tasks/App-for-fun.css';
+import randColor from '../Utilities/random_color.js'
+import rand from '../Utilities/random.js'
 
 //Task Main
 function App() {
@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setSeconds(trigger => trigger ? 0 : 1);
-    }, 2000);
+    }, 10000);
     return () => clearInterval(interval);
   });
 
@@ -23,14 +23,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header" style={{opacity: trigger ? 0 : 1, backgroundImage: `linear-gradient(${rand(0, 360)}deg, ${color1}, ${color2})`}}>
-          
-          
+      <header className="App-header" style={{opacity: trigger ? 1 : 0, backgroundImage: `linear-gradient(${rand(0, 360)}deg, ${color1}, ${color2})`}}>
       </header>
-      <div className="Hidden-header" style={{opacity: trigger ? 1 : 0 ,backgroundImage: `linear-gradient(${rand(0, 360)}deg, ${color3}, ${color4})`}}>
-          
-          
-      </div>    
+      <div className="Hidden-header" style={{opacity: trigger ? 0 : 1 ,backgroundImage: `linear-gradient(${rand(0, 360)}deg, ${color3}, ${color4})`}}>
+      </div>
+      <h1 style={{color: randColor()}}>Please wait</h1> 
+      <div className='rect'></div>   
     </div>
   );
 }
