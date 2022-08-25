@@ -1,19 +1,22 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 import './App.css';
-import Addition from './Components/R4/Addition';
-import Block from './Components/R4/Block';
-import Block2 from './Components/R4/Block2';
-import Change from './Components/R4/Change.jsx';
-import rand from './Utilities/random.js'
+import Books from './Components/RFetch/Books';
 
 //Task Main
 function App() {
+
+  const [books, setBooks] = useState(null);
+
+  useEffect(() => {
+    axios.get('https://in3.dev/knygos/').then(res => setBooks(res.data)).catch(_ => setBooks('error'))
+  }, []);
+
   return (   
     <div className="App">
       <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
-        <Change number={rand(5, 25)}/>
-        <Addition />
-        <Block />
-        <Block2 />
+        <Books books = {books} />
       </header>
     </div>
   );

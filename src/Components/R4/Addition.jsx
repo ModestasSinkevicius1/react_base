@@ -9,11 +9,11 @@ class Addition extends React.Component{
     update 
 
     add = () =>{
-        this.setState({number: this.state.number + 1 });
+        this.setState(s=>({number: s.number + 1 }));
     }
 
     subtract = () =>{
-        this.setState({number: this.state.number - 3 });
+        this.setState(s=>({number: s.number - 3 }));
     }
     
     render(){

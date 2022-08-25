@@ -6,12 +6,17 @@ class Block extends React.Component{
         this.state = { count: 0, required: 0, pressed: 0 }
     }
     
+    addOne = (s) =>{
+        return s.pressed + 1;
+    }
+
+
     addRectangle = () =>{
         if(this.state.required <= this.state.pressed){
-            this.setState({count: this.state.count + 1, required: this.state.required + 1, pressed: 0 });
+            this.setState(s => ({count: s.count + 1, required: s.required + 1, pressed: 0 }));
         }
         else{
-            this.setState({ pressed: this.state.pressed + 1 });
+            this.setState(s => ({pressed: s.pressed + 1}));
         }
     }
     

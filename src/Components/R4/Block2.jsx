@@ -8,12 +8,12 @@ class Block2 extends React.Component{
     }
     
     addRed = () =>{    
-        this.setState({count: this.state.count + 1});   
+        this.setState(s => ({pressed: s.pressed + 1}));   
         this.cubes.push(<div key={this.state.count} className="block" style={{backgroundColor: 'crimson'}}></div>)
     }
 
     addBlue = () =>{    
-        this.setState({count: this.state.count + 1});   
+        this.setState(s => ({pressed: s.pressed + 1}));   
         this.cubes.push(<div key={this.state.count} className="block" style={{backgroundColor: 'deepskyblue'}}></div>)
     }
 

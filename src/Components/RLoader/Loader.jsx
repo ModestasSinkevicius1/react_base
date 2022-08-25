@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import '../Tasks/App-for-fun.css';
-import randColor from '../Utilities/random_color.js'
-import rand from '../Utilities/random.js'
+import '../../Tasks/App-for-fun.css';
+import randColor from '../../Utilities/random_color.js'
+import rand from '../../Utilities/random.js'
 
 //Task Main
 function Loader() {
