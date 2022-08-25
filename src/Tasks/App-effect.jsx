@@ -1,5 +1,5 @@
-import './App.css';
-import AutoMultiply from './Components/REffect/AutoMultiply.jsx';
+import '../Tasks/App-effect.css';
+import AutoMultiply from '../Components/REffect/AutoMultiply.jsx';
 
 //Task Main
 function App() {

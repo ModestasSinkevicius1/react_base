@@ -1,5 +1,5 @@
-import './App.css';
-import Bin from './Components/RChalenge/Bin.jsx';
+import '../Tasks/App-challenge.css';
+import Bin from '../Components/RChalenge/Bin.jsx';
 //import Square from './Components/RChalenge/Square.jsx';
 
 /*

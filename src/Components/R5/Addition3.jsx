@@ -1,17 +1,25 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 
 function Addition3(){
     
-    const [number, setNumber] = useState(!sessionStorage.getItem('num') ? 0 : sessionStorage.getItem('num'));
+    const value = sessionStorage.getItem('num') || 0;
+
+    const [number, setNumber] = useState(value);
+
+    useEffect(()=>{
+        //sessionStorage.clear();
+        
+        if(!sessionStorage.getItem('num'))
+            setNumber(0);
+        else
+            setNumber(sessionStorage.getItem('num'));
+    },[]);
 
     const addNumber = () =>{
-        setNumber(s => s + 1);
-        if(!sessionStorage.getItem('num'))
-            sessionStorage.setItem('num', number);
-        else
-            sessionStorage['num'] = number;
-        // sessionStorage.clear();
+        setNumber(n => parseInt(n) + 1);
+        sessionStorage.setItem('num',number);
     }
 
     return(

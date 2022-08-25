@@ -1,9 +1,9 @@
-import './App.css';
-import Bala from './Components/R3/Task1/Bala.jsx';
-import Tvenkinys from './Components/R3/Task2/Tvenkinys.jsx';
-import Jura from './Components/R3/Task3/Jura.jsx';
-import Vandenynas from './Components/R3/Task4/Vandenynas.jsx';
-import Pasaulis from './Components/R3/Task5/Pasaulis.jsx';
+import '../Tasks/App-3.css';
+import Bala from '../Components/R3/Task1/Bala.jsx';
+import Tvenkinys from '../Components/R3/Task2/Tvenkinys.jsx';
+import Jura from '../Components/R3/Task3/Jura.jsx';
+import Vandenynas from '../Components/R3/Task4/Vandenynas.jsx';
+import Pasaulis from '../Components/R3/Task5/Pasaulis.jsx';
 
 const seaPlaners = [
   {id: 1, type: 'man', name: 'Lina', color: 'blue'},

@@ -1,8 +1,5 @@
-import './App.css';
-import rand from './Utilities/random.js'
-
-
-
+import '../Tasks/App-2.css';
+import rand from '../Utilities/random.js'
 
 const dogs = ['šuo', 'šunius', 'Bobikas', 'kudlius', 'Šarikas', 'avigalvis'];
 

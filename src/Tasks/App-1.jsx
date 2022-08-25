@@ -1,12 +1,12 @@
-import './App.css';
-import Animal from './Components/R1/Animal.jsx';
-import Black from './Components/R1/Black';
-import Labas from './Components/R1/Labas.jsx';
-import Text from './Components/R1/Text1.jsx';
-import Text2 from './Components/R1/Text2.jsx';
-import Text3 from './Components/R1/Text3';
-import White from './Components/R1/White';
-import rand from './Utilities/random.js';
+import '../Tasks/App-1.css';
+import Animal from '../Components/R1/Animal.jsx';
+import Black from '../Components/R1/Black.jsx';
+import Labas from '../Components/R1/Labas.jsx';
+import Text from '../Components/R1/Text1.jsx';
+import Text2 from '../Components/R1/Text2.jsx';
+import Text3 from '../Components/R1/Text3';
+import White from '../Components/R1/White';
+import rand from '../Utilities/random.js';
 
 
 const list = [
