@@ -1,5 +1,5 @@
-import './App.css';
-import Upload from './Components/RUpload/Upload';
+import '../Tasks/App-upload.css';
+import Upload from '../Components/RUpload/Upload';
 
 //Task Main
 function App() {
