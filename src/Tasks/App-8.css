@@ -36,40 +36,36 @@
   background-color: black;
   border-radius: 5px;
   height: 80vh;
-  margin: 0px 150px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-direction: column;
+  margin: 50px 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
-.btn-1{
+.form>h1{
+  grid-column: 1 / -1;
+}
+
+.form-1 .text-box{
+  height: 25px;
+  outline: none;
+}
+.form-1 .input-label{
+  margin: 10px;
+  font-weight: bold;
+}
+
+.btn{
   background-color: white;
   padding: 7px 30px;
   border-radius: 5px;
   font-size: 16px;
   margin: 10px;
-  width: 200px;
-  height: 50px;
-  font-weight: bold;
 }
 
-.cb-main-1-container{
-  background-color: black;
-  display: flex;
-  justify-content: center;
+.cube{
   width: 50px;
   height: 50px;
-  align-self: center;
-  margin: 20px;
-}
-
-.cb-main-1{
-  background-color: black;
-}
-
-.cb-main-1:checked{
+  margin: 5px;
   background-color: crimson;
 }

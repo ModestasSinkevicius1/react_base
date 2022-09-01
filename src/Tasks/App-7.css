@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #e9edf5;
+  min-height: 100vh;
+  gap: 10px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ganykla-field{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+}
+
+.avies-puse,
+.karves-puse{
+  width: 49.5%;
+  background-color: black;
+}
+
+.animal-area{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.avies-puse{
+  border-right: 2px dashed white;
+}
+
+.karves-puse{
+  border-left: 2px dashed white;
+}
+
+.btn-ganykla{
+  margin: 20px;
+  padding: 20px 40px;
+  font-size: 22px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+.avis, .karve{
+  width: 130px;
+  height: 130px;
+  margin: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.avis{
+  border-radius: 50%;
+}
+
+.animal-area span{
+  color: black;
+}

@@ -11,7 +11,7 @@ function Upload(){
         {
             const interId = setInterval(() => {
                 setValue(v => v + 1);               
-            }, 50);
+            }, 20);
                     
             return () => clearInterval(interId);
         }
@@ -39,7 +39,7 @@ function Upload(){
         else if(value === 100)
             return (<h2>{value}% Done!</h2>);
         else
-            return (<h2>{value}% No wait stop!</h2>);
+            return (<h2>{value}% No wait, stop!</h2>);
     }
     //<CheckStage />
     return (
