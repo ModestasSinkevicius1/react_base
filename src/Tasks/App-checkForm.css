@@ -32,46 +32,44 @@
   }
 }
 
-.btn-un{
+.form{
   background-color: black;
-  color: white;
   border-radius: 5px;
+  height: 80vh;
+  margin: 0px 150px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.btn-1{
+  background-color: white;
+  padding: 7px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
   width: 200px;
   height: 50px;
-  margin: 10px;
-  font-size: 22px;
+  font-weight: bold;
 }
 
-.blocks{
+.cb-main-1-container{
+  background-color: black;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.block{
-  border-radius: 5px;
-  background-color: whitesmoke;
+  justify-content: center;
   width: 50px;
   height: 50px;
-  margin: 5px;
+  align-self: center;
+  margin: 20px;
 }
 
-.select{
-  outline: none;
+.cb-main-1{
   background-color: black;
-  border-color: black;
-  border-radius: 5px;
-  color: white;
 }
 
-.circle-container{
-  display: flex;
-  justify-content: space-around;
-}
-
-.circle{
-  width: 300px;
-  height: 300px;
-  margin: 10px;
-  border-radius: 50%;
-  background-color: white;
+.cb-main-1:checked{
+  background-color: crimson;
 }

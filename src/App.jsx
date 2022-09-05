@@ -1,19 +1,15 @@
-import { useState } from 'react';
 import './App.css';
-import Form from './Components/RChalenge/Form.jsx';
+import Circles from './Components/R8/Circles';
+import Undo from './Components/R8/Undo';
 
 //Task Main
 function App() {
 
-  const [cb2, setCb2] = useState(false);
-
   return (   
     <div className="App">
       <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
-        <div className='cb-main-1-container' style={{backgroundColor: cb2 ? 'crimson' : 'black'}}>
-          
-        </div>
-        <Form setCb2={setCb2}/>
+        <Undo />
+        <Circles />
       </header>
     </div>
   );
