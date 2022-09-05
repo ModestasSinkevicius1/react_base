@@ -6,24 +6,26 @@ function Katinukai(){
     const [text1, setText1] = useState('');
     const [text2, setText2] = useState('');
 
-    const [records, setRecords] = useState([]);
+    const [records, setRecords] = useState(null);
     const [bendras, setBendras] = useState(null);
     const [answ, setAnsw] = useState(0);
 
     useEffect(()=>{
         setBendras(records?.map((a) => ({svoris: a.svoris})));
+        if(records !== null){
+            sessionStorage.setItem('record', JSON.stringify(records));
+        }
     },[records])
 
     useEffect(()=>{
         setAnsw(bendras?.reduce((a, b)=> a + b.svoris, 0));
     }, [bendras])
 
-    /*useEffect(()=>{
-        if(sessionStorage.getItem('record'))
-            setRecords(JSON.parse(sessionStorage.getItem('records')));
-        sessionStorage.setItem('record', JSON.stringify(records));
+    useEffect(()=>{
+        if(sessionStorage.getItem('record') !== null){
+            setRecords(JSON.parse(sessionStorage.getItem('record')));
+        }
     }, [])
-    */
 
     const saveRecord = () => {
         setRecords(r => [...r ?? [], {vardas: text1, svoris: +text2}].sort((a, b)=>b.svoris - a.svoris));
