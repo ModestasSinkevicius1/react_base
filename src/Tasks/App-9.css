@@ -1,0 +1,77 @@
+/* @import "~bootstrap/scss/bootstrap.scss"; */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #e9edf5;
+  min-height: 100vh;
+  gap: 10px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-un{
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  font-size: 22px;
+}
+
+.blocks{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block{
+  border-radius: 5px;
+  background-color: whitesmoke;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.select{
+  outline: none;
+  background-color: black;
+  border-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+.circle-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.circle{
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 50%;
+  background-color: white;
+}

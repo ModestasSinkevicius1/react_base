@@ -17,6 +17,7 @@
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .App-link {
@@ -32,46 +33,12 @@
   }
 }
 
-.btn-un{
-  background-color: black;
-  color: white;
-  border-radius: 5px;
-  width: 200px;
+.btn{
+  width: 10%;
   height: 50px;
-  margin: 10px;
-  font-size: 22px;
 }
 
-.blocks{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.block{
-  border-radius: 5px;
-  background-color: whitesmoke;
-  width: 50px;
-  height: 50px;
-  margin: 5px;
-}
-
-.select{
-  outline: none;
-  background-color: black;
-  border-color: black;
-  border-radius: 5px;
-  color: white;
-}
-
-.circle-container{
-  display: flex;
-  justify-content: space-around;
-}
-
-.circle{
-  width: 300px;
-  height: 300px;
-  margin: 10px;
-  border-radius: 50%;
-  background-color: white;
+.red-square{
+  padding: 20px;
+  border: 5px dashed red;
 }
