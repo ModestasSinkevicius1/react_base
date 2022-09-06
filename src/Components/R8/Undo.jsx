@@ -11,9 +11,10 @@ function Undo(){
 
     useEffect(()=>{
         if(block !== null){
-            localStorage.setItem('block', JSON.stringify(block));
+            localStorage.setItem('block', block ? JSON.stringify(block) : JSON.stringify([]));
             stack.current.push(block);
-            setStep([...stack.current]);
+
+            setStep(...[stack.current]);
         }
     }, [block])
 
@@ -33,14 +34,18 @@ function Undo(){
 
     const undo = () =>{
         const first = stack.current.pop();
-
+        
         if(!first){
             return;
         }
-        if(first.length === block.length)
+    
+        if(first.length === block.length){
             setBlock(stack.current.pop());
-        else
+        }         
+        else{
             setBlock(first);
+        }
+           
     }
 
     return(

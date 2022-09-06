@@ -1,15 +1,18 @@
 import { useRef } from "react";
+import randColor from '../../Utilities/random_color.js'
 
 function Circles(){
 
     const dom = useRef([
       ...Array(3)].map((_, i) => (
-        <div className="circle" key={i} style={{ backgroundColor: "white" }}></div>
+        <div className="circle" key={i} style={{ backgroundColor: randColor() }}></div>
       )),);
     
     const changeColor = () =>{
-        for(const el of dom.current){
-            console.log(el.props.style.backgroundColor);
+        const els = document.querySelectorAll('.circle');
+
+        for(const el of els){
+            el.style.backgroundColor = randColor();
         }
     }
 
