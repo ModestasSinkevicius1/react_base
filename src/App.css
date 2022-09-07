@@ -78,7 +78,9 @@
 .record{
   border-radius: 5px;
   width: 200px;
-  height: 30px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   margin: 5px;
   color: black;
@@ -86,4 +88,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px;
+  position: relative;
+}
+
+.record-title{
+  font-weight: bold;
+}
+
+.record-weight{
+  width: 90%;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  padding: 2px;
+}
+
+.record-btn-delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  outline: none;
+  background-color: transparent;
+  border: none;
 }
