@@ -43,7 +43,7 @@ function Edit(){
                 <button className='exit-btn' onClick={() => setModalEdit(null) }>Exit</button>
             </div>
             <div className="edit-inputs">
-                <select name="edit-select" id="edit-select" className="select input select-edit" value={animal} onChange={e => setAnimal(e.target.value)}>
+                <select disabled name="edit-select" id="edit-select" className="select input select-edit" value={animal} onChange={e => setAnimal(e.target.value)}>
                     <option value='0' disabled>Choose animal</option>
                     {animals.map(a => <option value={a.id} key={a.id}>{a.type}</option>)}        
                 </select>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './App.css';
+import Delete from './Components/R10/Delete';
 import Edit from './Components/R10/Edit.jsx';
 import MiniCrud from './Components/R10/MiniCrud';
 import DataContext from './Contexts/DataContext';
@@ -14,6 +15,8 @@ function App() {
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [records, setRecords] = useState(null);
   const [data, setData] = useState(null);
+
+  const [modalDelete, setModalDelete] = useState(null);
   const [deleteData, setDeleteData] = useState(null);
 
   const [modalEdit, setModalEdit] = useState(null);
@@ -68,6 +71,8 @@ function App() {
       setModalEdit,
       modalEdit,
       setEditData,
+      setModalDelete,
+      modalDelete,
     }}>   
       <div className="App">
         <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)',
@@ -75,6 +80,7 @@ function App() {
           <MiniCrud />
         </header>
         <Edit />
+        <Delete />
       </div>
     </DataContext.Provider>
   );
