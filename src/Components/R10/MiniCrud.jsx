@@ -1,14 +1,13 @@
 import { useContext, useState } from "react";
 import DataContext from "../../Contexts/DataContext";
 import animals from '../../Data/animals.js';
-import { erase } from "../../Functions/localStorage";
 
 function MiniCrud(){
 
     const [weight, setWeight] = useState('0');
     const [animal, setAnimal] = useState('0');
 
-    const dataContent = useContext(DataContext);
+    const { records, setData, setDeleteData, setBlur, setModalEdit } = useContext(DataContext);
     
     const addWeight = (e) => {
         const value = e.target.value;
@@ -18,13 +17,15 @@ function MiniCrud(){
     }
 
     const saveRecord = () => {
-        if(dataContent.records.length < 78)
-            dataContent.setData({title: animal, weight: weight});
+        if(records.length < 78 && animal !== '0')
+            setData({title: animal, weight: weight});
     }
 
-    const deleteRecord = (target) => {
-        dataContent.setData(erase(dataContent.key, target));
+    const openModalEdit = (animalList) => {
+        setBlur(5);
+        setModalEdit(animalList);
     }
+
     return (
         <div className="mini-crud">
             <div className="text-box-container">         
@@ -37,12 +38,13 @@ function MiniCrud(){
             </div>
             <div className="list">     
                 {
-                    dataContent.records?.map
+                    records?.map
                     (r => 
                         <div className="record" key={r.id}>
                             <div className="record-title">{animals.find(a => a.id === parseInt(r.title))?.type}</div>
                             <div className="record-weight">{r.weight}kg</div>
-                            <button className="record-btn-delete" onClick={() => deleteRecord(r.id)}>Delete</button>
+                            <button className="record-btn-delete" onClick={() => setDeleteData(r)}>Delete</button>
+                            <button className="record-btn-edit" onClick={() => openModalEdit(r)}>Edit</button>
                         </div> 
                     )
                 }         

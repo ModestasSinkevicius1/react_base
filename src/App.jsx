@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './App.css';
+import Edit from './Components/R10/Edit.jsx';
 import MiniCrud from './Components/R10/MiniCrud';
 import DataContext from './Contexts/DataContext';
-import { create, read } from './Functions/localStorage'
+import { create, erase, read, update } from './Functions/localStorage'
 
 const key = 'animals';
 
@@ -13,6 +14,12 @@ function App() {
   const [lastUpdate, setLastUpdate] = useState(Date.now());
   const [records, setRecords] = useState(null);
   const [data, setData] = useState(null);
+  const [deleteData, setDeleteData] = useState(null);
+
+  const [modalEdit, setModalEdit] = useState(null);
+  const [editData, setEditData] = useState(null);
+
+  const [blur, setBlur] = useState(0);
 
 
   useEffect(()=>{
@@ -29,16 +36,45 @@ function App() {
     setLastUpdate(Date.now());
   }, [data]);
 
+  //DELETE
+  useEffect(()=>{
+    if(deleteData === null){
+      return;
+    }
+    
+    erase(key, deleteData.id);
+    
+    setLastUpdate(Date.now());
+  }, [deleteData]);
+
+  //EDIT
+  useEffect(()=>{
+    if(editData === null){
+      return;
+    }
+    
+    update(key, editData, editData.id);
+    setModalEdit(null);
+    setLastUpdate(Date.now());
+  }, [editData]);
+
   return (
     <DataContext.Provider value={{
       setData,
       records,
       key,
+      setDeleteData,
+      setBlur,
+      setModalEdit,
+      modalEdit,
+      setEditData,
     }}>   
       <div className="App">
-        <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
+        <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)',
+                                               filter: `blur(${blur}px)`}}>
           <MiniCrud />
         </header>
+        <Edit />
       </div>
     </DataContext.Provider>
   );
