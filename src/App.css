@@ -47,6 +47,15 @@
   }
 }
 
+@keyframes shrinkDown {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0);
+  }
+}
+
 .mini-crud{
   width: 100%;
 }
@@ -116,7 +125,6 @@
   justify-content: center;
   padding: 5px;
   position: relative;
-  animation: popout 0.3s ease;
 }
 
 .record-title{

@@ -4,7 +4,7 @@ import DataContext from '../../Contexts/DataContext.jsx';
 
 function Delete(){
 
-    const { setBlur, modalDelete, setModalDelete, setDeleteData } = useContext(DataContext);
+    const { setBlur, modalDelete, setModalDelete, setDeleteData, refEl } = useContext(DataContext);
 
     useEffect(()=>{
         if (null === modalDelete) {
@@ -19,7 +19,12 @@ function Delete(){
     }
 
     const deleteRecord = () =>{
-        setDeleteData(modalDelete);
+        setTimeout(() => {
+            setDeleteData(modalDelete);
+        }, 400);
+        const el = refEl.current.querySelector("#i_" + modalDelete.id);
+        
+        el.style.animation = 'shrinkDown 0.3s ease forwards'; 
         setModalDelete(null);
     }
 

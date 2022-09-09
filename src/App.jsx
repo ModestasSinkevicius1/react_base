@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useRef } from 'react';
 import { useState } from 'react';
 import './App.css';
 import Delete from './Components/R10/Delete';
@@ -23,6 +24,10 @@ function App() {
   const [editData, setEditData] = useState(null);
 
   const [blur, setBlur] = useState(0);
+
+  const [recordAnimation, setRecordAnimation] = useState('popout 0.3s ease');
+
+  const refEl = useRef();
 
 
   useEffect(()=>{
@@ -73,6 +78,9 @@ function App() {
       setEditData,
       setModalDelete,
       modalDelete,
+      recordAnimation,
+      setRecordAnimation,
+      refEl,
     }}>   
       <div className="App">
         <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)',
