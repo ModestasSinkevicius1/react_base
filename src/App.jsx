@@ -1,97 +1,65 @@
 import { useEffect } from 'react';
-import { useRef } from 'react';
 import { useState } from 'react';
 import './App.css';
-import Delete from './Components/R10/Delete';
-import Edit from './Components/R10/Edit.jsx';
-import MiniCrud from './Components/R10/MiniCrud';
+import EditPaspirtukas from './Components/R11/EditPaspirtukas';
+import Paspirtukai from './Components/R11/Paspirtukai.jsx';
 import DataContext from './Contexts/DataContext';
-import { create, erase, read, update } from './Functions/localStorage'
+import { createKolt, readKolt, erase, update } from './Functions/koltLS';
 
-const key = 'animals';
+const key = 'paspirtukai';
 
-//Task Main
-function App() {
+function App(){
+
+  const [data, setData] = useState(null);
+  const [paspirtukai, setPaspirtukai] = useState(null);
+  const [delCard, setDelCard] = useState(null);
+
+  const [editCard, setEditCard] = useState(null);
+  const [modalEdit, setModalEdit] = useState(null);
 
   const [lastUpdate, setLastUpdate] = useState(Date.now());
-  const [records, setRecords] = useState(null);
-  const [data, setData] = useState(null);
-
-  const [modalDelete, setModalDelete] = useState(null);
-  const [deleteData, setDeleteData] = useState(null);
-
-  const [modalEdit, setModalEdit] = useState(null);
-  const [editData, setEditData] = useState(null);
-
-  const [blur, setBlur] = useState(0);
-
-  const [recordAnimation, setRecordAnimation] = useState('popout 0.3s ease');
-
-  const refEl = useRef();
-
 
   useEffect(()=>{
-    setRecords(read(key));
+    if(data !== null){
+      createKolt(key, data);
+      setLastUpdate(Date.now());
+    }
+  }, [data])
+
+  useEffect(()=>{
+    setPaspirtukai(readKolt(key));
   }, [lastUpdate])
 
   useEffect(()=>{
-    if(data === null){
-      return;
+    if(delCard !== null){
+      erase(key, delCard.id);
+      setLastUpdate(Date.now());
     }
-    
-    create(key, data);
-    
-    setLastUpdate(Date.now());
-  }, [data]);
+  }, [delCard])
 
-  //DELETE
   useEffect(()=>{
-    if(deleteData === null){
-      return;
+    if(editCard !== null){
+      update(key, editCard, editCard.id);
+      setModalEdit(null);
+      setLastUpdate(Date.now());
     }
-    
-    erase(key, deleteData.id);
-    
-    setLastUpdate(Date.now());
-  }, [deleteData]);
-
-  //EDIT
-  useEffect(()=>{
-    if(editData === null){
-      return;
-    }
-    
-    update(key, editData, editData.id);
-    setModalEdit(null);
-    setLastUpdate(Date.now());
-  }, [editData]);
+  })
 
   return (
-    <DataContext.Provider value={{
-      setData,
-      records,
-      key,
-      setDeleteData,
-      setBlur,
-      setModalEdit,
-      modalEdit,
-      setEditData,
-      setModalDelete,
-      modalDelete,
-      recordAnimation,
-      setRecordAnimation,
-      refEl,
-    }}>   
       <div className="App">
-        <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)',
-                                               filter: `blur(${blur}px)`}}>
-          <MiniCrud />
-        </header>
-        <Edit />
-        <Delete />
+        <DataContext.Provider value={{
+          setData,
+          paspirtukai,
+          setDelCard,
+        }}>
+          <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
+            <Paspirtukai />
+            <EditPaspirtukas />
+          </header>    
+        </DataContext.Provider>
       </div>
-    </DataContext.Provider>
   );
+
 }
 
 export default App;
