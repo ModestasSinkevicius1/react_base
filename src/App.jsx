@@ -1,62 +1,28 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './App.css';
-import EditPaspirtukas from './Components/R11/EditPaspirtukas';
-import Paspirtukai from './Components/R11/Paspirtukai.jsx';
-import DataContext from './Contexts/DataContext';
-import { createKolt, readKolt, erase, update } from './Functions/koltLS';
-
-const key = 'paspirtukai';
+import axios from 'axios';
 
 function App(){
 
-  const [data, setData] = useState(null);
-  const [paspirtukai, setPaspirtukai] = useState(null);
-  const [delCard, setDelCard] = useState(null);
-
-  const [editCard, setEditCard] = useState(null);
-  const [modalEdit, setModalEdit] = useState(null);
-
-  const [lastUpdate, setLastUpdate] = useState(Date.now());
+  const [trees, setTrees] = useState([]);
 
   useEffect(()=>{
-    if(data !== null){
-      createKolt(key, data);
-      setLastUpdate(Date.now());
-    }
-  }, [data])
-
-  useEffect(()=>{
-    setPaspirtukai(readKolt(key));
-  }, [lastUpdate])
-
-  useEffect(()=>{
-    if(delCard !== null){
-      erase(key, delCard.id);
-      setLastUpdate(Date.now());
-    }
-  }, [delCard])
-
-  useEffect(()=>{
-    if(editCard !== null){
-      update(key, editCard, editCard.id);
-      setModalEdit(null);
-      setLastUpdate(Date.now());
-    }
-  })
+    axios.get('http://localhost:3005/trees/by/1/?sort=title').then(res =>{
+      setTrees(res.data);
+    })
+  },[])
 
   return (
       <div className="App">
-        <DataContext.Provider value={{
-          setData,
-          paspirtukai,
-          setDelCard,
-        }}>
-          <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
-            <Paspirtukai />
-            <EditPaspirtukas />
-          </header>    
-        </DataContext.Provider>
+        <header className='App-header'>
+          <h1>Server</h1>
+          <ul>
+          {
+            trees.map(t => <li key={t.id}>{t.title} <i>{t.height}m</i></li>)
+          }
+          </ul>
+        </header>
       </div>
   );
 

@@ -1,5 +1,4 @@
 /* @import "~bootstrap/scss/bootstrap.scss"; */
-@import '@fortawesome/fontawesome-svg-core/styles.css';
 
 .App {
   text-align: center;
@@ -15,11 +14,11 @@
   min-height: 100vh;
   gap: 10px;
   font-size: calc(10px + 2vmin);
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  color: black;
 }
 
 .App-link {
@@ -33,127 +32,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-@keyframes popout {
-  0%{
-    transform: scale(0.5);
-  }
-  50%{
-    transform: scale(1.2);
-  }
-  100%{
-    transform: scale(1);
-  }
-}
-
-@keyframes shrinkDown {
-  0%{
-    transform: scale(1);
-  }
-  100%{
-    transform: scale(0);
-  }
-}
-
-.paspirtukai{
-  width: 100%;
-}
-
-.kolt-header{
-  background-color: #24c3ce;
-  margin: 25px;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-.input-new-text{
-  border-radius: 5px;
-  width: 150px;
-  padding: 5px;
-  outline: none;
-  border: none;
-  margin: 10px;
-}
-
-.display-paspirtukai{
-  margin: 25px;
-  background-color: white;
-  border-radius: 10px;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 300px 300px;
-  align-items: center;
-  
-}
-
-.input-new-btn{
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 16px;
-  margin: 10px;
-  width: 100px;
-}
-
-.card{
-  background-color: #dcd8d8;
-  margin: 10px;
-  border-radius: 10px;
-  border: 2px solid #00000033;
-  text-align: left;
-}
-.card span{
-  display: block;
-  margin-left: 10px;
-  color: #565454;
-  font-size: 18px;
-}
-
-.input-edit-container{
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.edit-paspirtukas{
-  position: fixed;
-  width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: white;
-  color: black;
-
-  top: 35%;
-  right: 50%;
-  transform: translate(50%, -25%);
-  overflow: hidden;
-  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.443);
-  border: 2px solid black;
-}
-
-.edit-inputs{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-}
-
-.edit-inputs label{
-  width: 50%;
-}
-
-.text-box-edit{
-  width: 200px;
-}
-
-.exit-btn{
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  background-color: transparent;
-  transform: translateY(20%);
 }
