@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import '../Tasks/App-11.css';
-import EditPaspirtukas from '../Components/R11/EditPaspirtukas';
-import Paspirtukai from '../Components/R11/Paspirtukai.jsx';
-import DataContext from '../Contexts/DataContext';
-import { createKolt, readKolt, erase, update } from '../Functions/koltLS';
+import './App.css';
+import EditPaspirtukas from './Components/R11/EditPaspirtukas';
+import Paspirtukai from './Components/R11/Paspirtukai.jsx';
+import DataContext from './Contexts/DataContext';
+import { createKolt, readKolt, erase, update } from './Functions/koltLS';
 
 const key = 'paspirtukai';
 
@@ -51,9 +51,6 @@ function App(){
           setData,
           paspirtukai,
           setDelCard,
-          modalEdit,
-          setModalEdit,
-          setEditCard,
         }}>
           <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
             <Paspirtukai />

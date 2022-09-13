@@ -67,6 +67,12 @@
   border-radius: 10px;
 }
 
+.input-date-container,
+.input-km-container{
+  display: inline-block;
+  text-align: left;
+}
+
 .input-new-text{
   border-radius: 5px;
   width: 150px;
@@ -80,7 +86,6 @@
   margin: 25px;
   background-color: white;
   border-radius: 10px;
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 300px 300px;
@@ -156,4 +161,8 @@
   border: none;
   background-color: transparent;
   transform: translateY(20%);
+}
+
+.input-label{
+  width: 200px;
 }
