@@ -5,6 +5,7 @@ import EditPaspirtukas from '../Components/R11/EditPaspirtukas';
 import Paspirtukai from '../Components/R11/Paspirtukai.jsx';
 import DataContext from '../Contexts/DataContext';
 import { createKolt, readKolt, erase, update } from '../Functions/koltLS';
+import Statistics from '../Components/R11/Statistics';
 
 const key = 'paspirtukai';
 
@@ -54,10 +55,12 @@ function App(){
           modalEdit,
           setModalEdit,
           setEditCard,
+          setPaspirtukai,
         }}>
           <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
             <Paspirtukai />
             <EditPaspirtukas />
+            <Statistics />
           </header>    
         </DataContext.Provider>
       </div>

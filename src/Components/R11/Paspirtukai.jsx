@@ -11,7 +11,7 @@ function Paspirtukai(){
 
     const formatDate = `${dateNow.getFullYear()}-${month.padStart(month.length+1, '0')}-${dateNow.getDate()}`;
 
-    const { setData } = useContext(DataContext);
+    const { setData, setPaspirtukai, paspirtukai } = useContext(DataContext);
 
     const [date, setDate] = useState(formatDate);
     const [kilometres, setKilometres] = useState(0);
@@ -25,6 +25,17 @@ function Paspirtukai(){
                 totalRideKilometres: kilometres,
             }
         );
+    }
+
+    const sortByKm = () =>{
+        console.log(paspirtukai);
+        setPaspirtukai(s => [...s.sort((a,b)=>b.totalRideKilometres-a.totalRideKilometres)]);
+    }
+    
+    const sortByDate = () =>{
+        console.log(paspirtukai);
+        setPaspirtukai(s => [...s.sort((a,b)=> 
+            new Date(b.lastUseTime) - new Date(a.lastUseTime))]);
     }
 
     return(
@@ -43,6 +54,8 @@ function Paspirtukai(){
                     </div>
                     <button onClick={saveData} className='input-new-btn'>Press me</button>
                 </div>
+                <button onClick={sortByKm} className='input-new-btn'>Sort by kilometres</button>
+                <button onClick={sortByDate} className='input-new-btn'>Sort by date</button>
             </div>
             <DisplayPaspirtukai />
         </div>

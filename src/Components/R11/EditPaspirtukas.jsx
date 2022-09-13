@@ -53,7 +53,7 @@ function EditPaspirtukas(){
                 <input type='date' id='edit-text-form' className='text-box input text-box-edit' value={newDate} onChange={(e)=>setNewDate(e.target.value)} />
             </div>
             <div className="edit-inputs">
-                <label htmlFor="edit-text-form">Total ride kilometres</label>
+                <label htmlFor="edit-text-form">Ride kilometres</label>
                 <input readOnly disabled type='text' id='edit-text-form' className='text-box input text-box-edit' value={modalEdit.totalRideKilometres} />
             </div>
             <div className="edit-inputs">
