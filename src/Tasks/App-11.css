@@ -110,6 +110,7 @@
   border-radius: 10px;
   border: 2px solid #00000033;
   text-align: left;
+  box-shadow:  2px 2px 5px #000000a8;
 }
 .card span{
   display: block;
@@ -184,4 +185,42 @@
 
 .stat-container span{
   margin: 25px;
+}
+
+@media (max-width:1200px){
+  .display-paspirtukai{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px 300px;
+    align-items: center;
+  }
+}
+
+@media (max-width:910px){
+  .display-paspirtukai{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px 300px;
+    align-items: center;
+  }
+}
+
+@media (max-width:600px){
+  .display-paspirtukai{
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 300px;
+    align-items: center;
+  }
+
+  .edit-paspirtukas{
+    width: 300px;
+  }
+  .edit-paspirtukas label{
+    font-size: 12px;
+    width: 60%;
+  }
+  .edit-inputs input{
+    font-size: 12px;
+  }
+  .edit-paspirtukas .btn-edit{
+    font-size: 14px;
+  }
 }

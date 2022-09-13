@@ -10,7 +10,7 @@ function Statistics(){
             <h2>Statistics</h2>
             <div className="stat-container">
                 <span>Total kilometres: {paspirtukai?.reduce((a, b)=>
-                    a + parseInt(b.totalRideKilometres), 0)}</span>
+                    a + parseInt(b.totalRideKilometres), 0)}km</span>
                 <span>Total scooters: {paspirtukai?.length}</span>
             </div>
         </div>
