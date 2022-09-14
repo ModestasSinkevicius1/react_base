@@ -29,30 +29,7 @@
   from {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(180deg) scale(0.01);;
-  }
   to {
-    transform: rotate(360deg) scale(1);
+    transform: rotate(360deg);
   }
-}
-
-.square{
-  width: 100px;
-  height: 100px;
-  animation: App-logo-spin 3s ease infinite;
-}
-
-.btn{
-  width: 100px;
-  height: 30px;
-  font-weight: bold;
-  border: none;
-  background-color: rgb(74, 146, 224);
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn:active{
-  border: 3px outset rgba(74, 146, 224, 0.461);
 }

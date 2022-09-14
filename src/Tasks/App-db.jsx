@@ -51,6 +51,8 @@ function App(){
           setData,
           paspirtukai,
           setDelCard,
+          setEditCard,
+          modalEdit,
         }}>
           <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)'}}>
             <Paspirtukai />

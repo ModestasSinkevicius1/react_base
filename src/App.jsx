@@ -1,27 +1,15 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
 import './App.css';
-import axios from 'axios';
+//import Square from './Components/RTotalRecall/T1/Square';
+import randColor from './Utilities/random_color.js'
 
 function App(){
-
-  const [trees, setTrees] = useState([]);
-
-  useEffect(()=>{
-    axios.get('http://localhost:3005/trees/by/1/?sort=title').then(res =>{
-      setTrees(res.data);
-    })
-  },[])
 
   return (
       <div className="App">
         <header className='App-header'>
-          <h1>Server</h1>
-          <ul>
-          {
-            trees.map(t => <li key={t.id}>{t.title} <i>{t.height}m</i></li>)
-          }
-          </ul>
+          <h1>Total Recall 1</h1>
+          {/* <Square rect='red' /> */}
+          <button onClick={() => console.log('%c Būūū', `color: ${randColor()}`)} className='btn'>Būūū</button>
         </header>
       </div>
   );
