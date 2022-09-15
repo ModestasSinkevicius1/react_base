@@ -9,19 +9,19 @@ function Edit(){
     const [weight, setWeight] = useState('0');
     const [animal, setAnimal] = useState('0');
 
-    const { setModalEdit, modalEdit, setBlur, setEditData } = useContext(DataContext);
+    const { setModalEdit, modalEdit, setDim, setEditData } = useContext(DataContext);
 
     useEffect(()=>{
         if (null === modalEdit) {
+            setDim(0);
             return;
         }
         setAnimal(modalEdit.title);
         setWeight(modalEdit.weight);
-    },[modalEdit])
+    },[modalEdit, setDim])
 
 
     if (null === modalEdit) {
-        setBlur(0);
         return null;
     }
 

@@ -4,17 +4,17 @@ import DataContext from '../../Contexts/DataContext.jsx';
 
 function Delete(){
 
-    const { setBlur, modalDelete, setModalDelete, setDeleteData, refEl } = useContext(DataContext);
+    const { modalDelete, setModalDelete, setDeleteData, refEl, setDim } = useContext(DataContext);
 
     useEffect(()=>{
         if (null === modalDelete) {
+            setDim(0);         
             return;
         }
-    },[modalDelete])
+    },[modalDelete, setDim])
 
 
     if (null === modalDelete) {
-        setBlur(0);
         return null;
     }
 

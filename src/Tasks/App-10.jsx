@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
-import './App.css';
-import Delete from './Components/R10/Delete';
-import Edit from './Components/R10/Edit.jsx';
-import MiniCrud from './Components/R10/MiniCrud';
-import DataContext from './Contexts/DataContext';
-import { create, erase, read, update } from './Functions/localStorage'
+import '../Tasks/App-10.css';
+import Delete from '../Components/R10/Delete';
+import Edit from '../Components/R10/Edit.jsx';
+import MiniCrud from '../Components/R10/MiniCrud';
+import DataContext from '../Contexts/DataContext';
+import { create, erase, read, update } from '../Functions/localStorage'
 
 const key = 'animals';
 
@@ -23,7 +23,7 @@ function App() {
   const [modalEdit, setModalEdit] = useState(null);
   const [editData, setEditData] = useState(null);
 
-  const [blur, setBlur] = useState(0);
+  const [dim, setDim] = useState(0);
 
   const [recordAnimation, setRecordAnimation] = useState('popout 0.3s ease');
 
@@ -72,7 +72,7 @@ function App() {
       records,
       key,
       setDeleteData,
-      setBlur,
+      setDim,
       setModalEdit,
       modalEdit,
       setEditData,
@@ -84,7 +84,7 @@ function App() {
     }}>   
       <div className="App">
         <header className="App-header" style={{backgroundImage: 'linear-gradient(red, yellow)',
-                                               filter: `blur(${blur}px)`}}>
+                                               filter: `grayscale(${dim}%)`}}>
           <MiniCrud />
         </header>
         <Edit />
