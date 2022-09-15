@@ -51,8 +51,23 @@
   background-color: rgb(74, 146, 224);
   border-radius: 5px;
   cursor: pointer;
+  margin: 10px;
 }
 
 .btn:active{
   border: 3px outset rgba(74, 146, 224, 0.461);
+}
+
+.btn:focus{
+  border: 3px outset rgba(74, 146, 224, 0.461);
+}
+
+h2{
+  margin: 0;
+}
+
+hr{
+  background-color: white;
+  height: 2px;
+  width: 100%;
 }
