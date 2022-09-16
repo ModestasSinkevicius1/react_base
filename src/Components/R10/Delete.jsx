@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import DataContext from '../../Contexts/DataContext.jsx';
 
 function Delete(){

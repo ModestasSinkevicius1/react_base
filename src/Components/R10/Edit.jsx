@@ -1,6 +1,4 @@
-import { useContext } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import DataContext from '../../Contexts/DataContext.jsx';
 import animals from '../../Data/animals.js';
 

@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
-import { useRef } from 'react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../Tasks/App-10.css';
 import Delete from '../Components/R10/Delete';
 import Edit from '../Components/R10/Edit.jsx';
@@ -30,10 +28,12 @@ function App() {
   const refEl = useRef();
 
 
+  //READ
   useEffect(()=>{
     setRecords(read(key));
   }, [lastUpdate])
 
+  //CREATE
   useEffect(()=>{
     if(data === null){
       return;
@@ -55,7 +55,7 @@ function App() {
     setLastUpdate(Date.now());
   }, [deleteData]);
 
-  //EDIT
+  //UPDATE
   useEffect(()=>{
     if(editData === null){
       return;
