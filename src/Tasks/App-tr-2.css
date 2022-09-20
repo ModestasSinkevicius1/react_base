@@ -37,6 +37,12 @@
   }
 }
 
+.square{
+  width: 100px;
+  height: 100px;
+  animation: App-logo-spin 3s ease infinite;
+}
+
 .btn{
   width: 100px;
   height: 30px;
@@ -56,9 +62,12 @@
   border: 3px outset rgba(74, 146, 224, 0.461);
 }
 
-span{
-  margin: 5px;
-  display: inline-block;
-  width: 150px;
-  text-align: left;
+h2{
+  margin: 0;
+}
+
+hr{
+  background-color: white;
+  height: 2px;
+  width: 100%;
 }
